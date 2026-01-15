@@ -51,12 +51,10 @@
 ───┬──────────────────────────────────────────────────────────────────────────────────────────────
        │ File: 8-concat_edges.py
 ───────┼──────────────────────────────────────────────────────────────────────────────────────────────
-   1   │ #!/usr/bin/python3
-   2 ~ │ str = "Python is an interpreted, interactive, object-oriented programming language that combi
-       │ nes remarkable power with very clear syntax"
-   3 ~ │ print(str[:6])
-   4 ~ │ print(str[39:67])
-   5 ~ │ print(str[106:112])
+        #!/usr/bin/python3
+txt = "Python is an interpreted, interactive, object-oriented programming\
+ language that combines remarkable power with very clear syntax"
+print(txt[39:67] + txt[107:112] + txt[:6].strip('P'))
 ───────┴──────────────────────────────────────────────────────────────────────────────────────────────
 ───────┬──────────────────────────────────────────────────────────────────────────────────────────────
        │ File: 9-easter_egg.py
