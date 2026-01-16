@@ -62,23 +62,16 @@
    9   │         total += int(sys.argv[i + 1])
   10   │     print("{}".format(total))
 ───────┴───────────────────────────────────────────────────
+4
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import importlib.util
+import hidden_4
 
-    # chemin vers le fichier .pyc
-    file_path = "/tmp/hidden_4.pyc"
+if __name__ == '__main__':
+    def_names = dir(hidden_4)
 
-    # création d’un spec pour le module
-    spec = importlib.util.spec_from_file_location("hidden_4", file_path)
-    hidden_4 = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(hidden_4)
-
-    # lister les noms définis
-    names = dir(hidden_4)
-    for name in sorted(names):
-        if not name.startswith("__"):
-            print(name)
+    for i in range(len(def_names)):
+        if def_names[i][:2] != '__':
+            print(def_names[i])
 ─┬──────────────────────────────────────────────────────────────────────────────────────────────
        │ File: 5-variable_load.py
 ───────┼──────────────────────────────────────────────────────────────────────────────────────────────
