@@ -62,20 +62,23 @@
    9   │         total += int(sys.argv[i + 1])
   10   │     print("{}".format(total))
 ───────┴───────────────────────────────────────────────────
-┬──────────────────────────────────────────────────────────────────────────────────────────────
-       │ File: 4-hidden_discovery.py
-───────┼──────────────────────────────────────────────────────────────────────────────────────────────
-   1   │ #!/usr/bin/python3
-   2   │
-   3   │ if __name__ == "__main__":
-   4   │     """Print all names defined by hidden_4 module."""
-   5   │     import hidden_4
-   6   │
-   7   │     names = dir(hidden_4)
-   8   │     for name in names:
-   9   │         if name[:2] != "__":
-  10   │             print(name)
-───────┴─────────────────────────────────────────────────────────────────
+#!/usr/bin/python3
+if __name__ == "__main__":
+    import importlib.util
+
+    # chemin vers le fichier .pyc
+    file_path = "/tmp/hidden_4.pyc"
+
+    # création d’un spec pour le module
+    spec = importlib.util.spec_from_file_location("hidden_4", file_path)
+    hidden_4 = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(hidden_4)
+
+    # lister les noms définis
+    names = dir(hidden_4)
+    for name in sorted(names):
+        if not name.startswith("__"):
+            print(name)
 ─┬──────────────────────────────────────────────────────────────────────────────────────────────
        │ File: 5-variable_load.py
 ───────┼──────────────────────────────────────────────────────────────────────────────────────────────
