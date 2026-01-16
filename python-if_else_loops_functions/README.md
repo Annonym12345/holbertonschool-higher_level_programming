@@ -101,3 +101,9 @@ def print_last_digit(number):
 def add(a, b):
     """Return the addition of a and b."""
     return (a + b)
+------------------------------------------------------------------------
+#!/usr/bin/python3
+
+def pow(a, b):
+    """Return a to the power of b."""
+    return (a ** b)
