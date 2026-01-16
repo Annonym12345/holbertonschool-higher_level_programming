@@ -95,3 +95,9 @@ def print_last_digit(number):
     """Print the last digit of a number and return it."""
     print(abs(number) % 10, end="")
     return (abs(number) % 10)
+---------------------------------------------------------------------
+#!/usr/bin/python3
+
+def add(a, b):
+    """Return the addition of a and b."""
+    return (a + b)
