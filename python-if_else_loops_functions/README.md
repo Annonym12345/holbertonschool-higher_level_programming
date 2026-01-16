@@ -107,3 +107,26 @@ def add(a, b):
 def pow(a, b):
     """Return a to the power of b."""
     return (a ** b)
+-----------------------------------------------------------------------
+─┬──────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: 12-fizzbuzz.py
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #!/usr/bin/python3
+   2   │
+   3   │ def fizzbuzz():
+   4   │     """Print the numbers from 1 to 100 separated by a space.
+   5   │
+   6   │     For multiples of three, print Fizz instead of the number.
+   7   │     For multiples of five, print Buzz instead of the number.
+   8   │     For multiples of three and five, print FizzBuzz instead of the number.
+   9   │     """
+  10   │     for number in range(1, 101):
+  11   │         if number % 3 == 0 and number % 5 == 0:
+  12   │             print("FizzBuzz ", end="")
+  13   │         elif number % 3 == 0:
+  14   │             print("Fizz ", end="")
+  15   │         elif number % 5 == 0:
+  16   │             print("Buzz ", end="")
+  17   │         else:
+  18   │             print("{} ".format(number), end="")
+───────┴───────────────────────────────────────────────────────────────────────
