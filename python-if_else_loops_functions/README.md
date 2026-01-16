@@ -26,3 +26,14 @@ elif digit == 0:
     print("0")
 else:
     print("less than 6 and not 0")
+
+ │ File: 2-print_alphabet.py
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #!/usr/bin/python3
+   2   │ # 2-print_alphabet.py
+   3   │ # Annonym12345 <ismaelbsd.pro@gmail.com>
+   4   │
+   5   │ """Print the alphabet in lowercase, not followed by a new line."""
+   6   │ for letter in range(97, 123):
+   7   │     print("{}".format(chr(letter)), end="")
+───────┴───────────────────────────────────────────────────────────
