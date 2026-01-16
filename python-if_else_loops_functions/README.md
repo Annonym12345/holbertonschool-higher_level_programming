@@ -37,3 +37,9 @@ else:
    6   │ for letter in range(97, 123):
    7   │     print("{}".format(chr(letter)), end="")
 ───────┴───────────────────────────────────────────────────────────
+#!/usr/bin/python3
+for i in range(97, 123):
+    if i != 101 and i != 113:
+        print("{}".format(chr(i)), end="")
+print("guillaume", end="")
+
