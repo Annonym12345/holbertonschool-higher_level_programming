@@ -41,3 +41,9 @@ else:
 for i in range(97, 123):
     if i != 101 and i != 113:
         print("{}".format(chr(i)), end="")
+--------------------------------------------------------------------------------
+#!/usr/bin/python3
+
+"""Print numbers 0 to 98 in decimal and hexadecimal."""
+for number in range(0, 99):
+    print("{} = {}".format(number, hex(number)))
