@@ -67,3 +67,12 @@ for digit1 in range(0, 10):
             print("{}{}".format(digit1, digit2))
         else:
             print("{}{}".format(digit1, digit2), end=", ")
+----------------------------------------------------------------------------------
+#!/usr/bin/python3
+
+def islower(c):
+    """Check for lowercase characters."""
+    if ord(c) >= 97 and ord(c) <= 122:
+        return True
+    else:
+        return False
