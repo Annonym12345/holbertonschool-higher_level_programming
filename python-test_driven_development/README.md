@@ -49,3 +49,6 @@
   46   │     if type(num) is float:
   47   │         num = int(num)
   48   │         return num
+
+
+6
