@@ -50,4 +50,10 @@
   12   │
   13   │     for letter in roman_string:
   14   │         for elem in roman_letters:
-:
+---------------------------------------------------------------------------------------------------
+#!/usr/bin/python3
+def multiply_list_map(my_list=[], number=0):
+    return list(map(mul, my_list))
+
+def mul(x):
+    return x * number
