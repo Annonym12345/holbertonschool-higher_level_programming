@@ -1,3 +1,6 @@
+# Git Intro Project
+
+
 #!/usr/bin/python3
 """Read and print a text file (UTF-8)."""
 
