@@ -1,1 +1,5 @@
-SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
+-- 12. Update score
+-- updates the score of Bob to 10
+UPDATE second_table
+SET score = 10
+WHERE name = 'Bob';
