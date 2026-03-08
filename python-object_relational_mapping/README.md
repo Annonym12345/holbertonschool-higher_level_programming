@@ -41,3 +41,54 @@
   36   │     cursor.close()
   37   │     db.close()
 ───────┴──────────────────────────────────────────────────────────
+
+────┬──────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: 10-model_state_my_get.py
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #!/usr/bin/python3
+   2   │ """Task: List all states that contain the letter 'a'"""
+   3   │ import sys
+   4   │ from model_state import State, Base
+   5   │ from sqlalchemy import create_engine
+   6   │ from sqlalchemy.orm import sessionmaker
+   7   │
+   8   │
+   9   │ if __name__ == "__main__":
+  10   │     connect = create_engine(
+  11   │         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+  12   │             sys.argv[1],
+  13   │             sys.argv[2],
+  14   │             sys.argv[3]),
+  15   │         pool_pre_ping=True)
+  16   │     Session = sessionmaker(bind=connect)
+  17   │     session = Session()
+  18   │     States = session.query(State).filter(State.name == sys.argv[4]).first()
+  19   │
+  20   │     if States is not None:
+  21   │         print(States.id)
+  22   │     else:
+  23   │         print("Not found")
+───────┴──────────────────────────────────────────────────────────────────────────────────────────────
+───────┬──────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: 11-model_state_insert.py
+───────┼──────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #!/usr/bin/python3
+   2   │ """Task: Add the Louisiana state to the database"""
+   3   │ import sys
+   4   │ from model_state import State, Base
+   5   │ from sqlalchemy import create_engine
+   6   │ from sqlalchemy.orm import sessionmaker
+   7   │
+   8   │
+   9   │ if __name__ == "__main__":
+  10   │     connect = create_engine(
+  11   │         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+  12   │             sys.argv[1],
+  13   │             sys.argv[2],
+  14   │             sys.argv[3]),
+  15   │         pool_pre_ping=True)
+  16   │     Base.metadata.create_all(connect)
+  17   │     Session = sessionmaker(bind=connect)
+  18   │     session = Session()
+  19   │     new_state = State(name='Louisiana')
+  20   │     session.add(new_state)
